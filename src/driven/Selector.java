@@ -1,6 +1,7 @@
 package driven;
 
 import fields.Person;
+import node.MyLinkedList;
 
 import java.util.Scanner;
 
@@ -15,6 +16,8 @@ public class Selector {
         String firstName = scanner.nextLine();
         System.out.print("Last Name : ");
         String lastName = scanner.nextLine();
+        MyLinkedList<Long> contactList = new MyLinkedList<>();
+        char choice = 'y';
         return person;
     }
 }
