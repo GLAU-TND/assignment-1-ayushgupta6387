@@ -34,9 +34,10 @@ public class Selector {
             choice = (scanner.nextLine()).charAt(0);
 
         }
-        System.out.print("Email Address: ");
-        String emailId = scanner.nextLine();
-        while (true) {
+        System.out.print("Would you like to add email address? (y/n): ");
+        char ch = scanner.nextLine().charAt(0);
+        while (ch == 'y') {
+            String emailId = scanner.nextLine();
             if (check.isEmailCorrect(emailId)) {
                 person = new Person(firstName, lastName, emailId, contactList);
                 break;
