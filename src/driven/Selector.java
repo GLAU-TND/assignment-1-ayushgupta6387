@@ -49,4 +49,7 @@ public class Selector {
         return person;
     }
 
+    public void print(MyLinkedList<Person> searchedContact, int match) {
+
+    }
 }
