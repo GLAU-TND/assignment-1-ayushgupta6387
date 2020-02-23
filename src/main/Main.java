@@ -27,6 +27,10 @@ public class Main {
                         linkedList = object.sort(linkedList);
                     }
                     break;
+                case 2:
+                    object.viewContact(linkedList);
+                    break;
+
             }
         }
     }
