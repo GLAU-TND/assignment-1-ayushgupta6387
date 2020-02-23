@@ -36,6 +36,12 @@ public class Selector {
         }
         System.out.print("Email Address: ");
         String emailId = scanner.nextLine();
+        while (true) {
+            if (check.isEmailCorrect(emailId)) {
+                person = new Person(firstName, lastName, emailId, contactList);
+                break;
+            }
+        }
         return person;
     }
 
