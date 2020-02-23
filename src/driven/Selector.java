@@ -70,7 +70,9 @@ public class Selector {
     }
 
     public void viewContact(MyLinkedList person) {
-
+        System.out.println("---Here are all your contacts---");
+        int size = person.getSize();
+        print(person, size);
     }
 }
 
