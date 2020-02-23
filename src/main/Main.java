@@ -1,5 +1,6 @@
 package main;
 
+import driven.Selector;
 import fields.Person;
 import node.MyLinkedList;
 
@@ -18,5 +19,7 @@ public class Main {
                     "Press 4 to delete a contact\n" +
                     "Press 5 to exit program ");
             int choice = scanner.nextInt();
+            Selector obj = new Selector();
         }
     }
+}
