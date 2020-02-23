@@ -24,6 +24,5 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
 
     @Override
     public void swap(Node<E> first, Node<E> second, int previous) {
-
     }
 }
