@@ -28,6 +28,17 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
         size++;
     }
 
+    private void add(E data, int index) {
+        Node temp = getNode(index - 1);
+        if (head == null) {
+            addFirst(data);
+        } else {
+            Node newNode = temp.getNext();
+            temp.setNext(new Node(newNode, data));
+        }
+        size++;
+    }
+
 
     @Override
     public void insert(E data) {
