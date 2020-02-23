@@ -25,6 +25,10 @@ public class Selector {
             System.out.print("Contact Number: ");
             contactNumber = Long.parseLong(scanner.nextLine());
             if (check.isContactNumberCorrect(contactNumber)) {
+                contactList.insert(contactNumber);
+            } else {
+                System.out.println("Invalid Contact Number Entered");
+                continue;
             }
 
         }
