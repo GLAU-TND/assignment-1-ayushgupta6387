@@ -36,7 +36,11 @@ public class Main {
                 case 4:
                     object.deleteContact(linkedList);
                     break;
-
+                case 5:
+                    loop = true;
+                    break;
+                default:
+                    System.out.println("Wrong Entry !!!");
             }
         }
     }
