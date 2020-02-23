@@ -39,10 +39,18 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
         size++;
     }
 
+    public void insert(E data, int index) {
+        add(data, index);
+    }
+
 
     @Override
     public void insert(E data) {
-
+        if (head == null) {
+            addFirst(data);
+        } else {
+            add(data, size);
+        }
     }
 
     @Override
