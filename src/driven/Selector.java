@@ -76,7 +76,7 @@ public class Selector {
     }
 
     public void searchContact(MyLinkedList person) {
-
+        MyLinkedList<Person> searchedContact = new MyLinkedList<>();
     }
 }
 
