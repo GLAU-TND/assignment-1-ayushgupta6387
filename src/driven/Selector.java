@@ -94,6 +94,15 @@ public class Selector {
         }
         print(searchedContact, match);
     }
+
+    public void deleteContact(MyLinkedList<Person> person) {
+        int i = 1;
+        System.out.println("Here are all your contacts: ");
+        for (int j = 0; j < person.getSize(); j++) {
+            Person person1 = (Person) person.getNode(j).getData();
+            System.out.println(i++ + ". " + person1.getFirstName() + " " + person1.getLastName());
+        }
+    }
 }
 
 
