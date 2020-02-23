@@ -82,6 +82,19 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
 
     @Override
     public void swap(Node<E> first, Node<E> second, int previous) {
+        if (first == head) {
+            Node temp = second.getNext();
+            head = second;
+            second.setNext(first);
+            first.setNext(temp);
+        } else {
+            Node temp = second.getNext();
+            Node pre = getNode(previous);
+            pre.setNext(second);
+            second.setNext(first);
+            first.setNext(temp);
+        }
+
 
     }
 }
