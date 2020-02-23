@@ -30,7 +30,9 @@ public class Main {
                 case 2:
                     object.viewContact(linkedList);
                     break;
-
+                case 3:
+                    object.searchContact(linkedList);
+                    break;
             }
         }
     }
