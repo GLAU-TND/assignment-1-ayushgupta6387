@@ -120,10 +120,9 @@ public class Selector {
                 if (first.getFirstName().compareTo(second.getFirstName()) >= 1) {
                     person.swap(person1, person2, j - 2);
                 }
-
-                return person;
             }
         }
+        return person;
     }
 }
 
