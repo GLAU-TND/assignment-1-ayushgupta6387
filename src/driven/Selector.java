@@ -79,6 +79,14 @@ public class Selector {
         MyLinkedList<Person> searchedContact = new MyLinkedList<>();
         System.out.println("You could search for a contact from their first names: ");
         String elementFor = scanner.nextLine();
+        int match = 0;
+        for (int i = 0; i < person.getSize(); i++) {
+            Person person1 = (Person) person.getNode(i).getData();
+            if (elementFor.equals(person1.getFirstName())) {
+                match++;
+                searchedContact.insert(person1);
+            }
+        }
     }
 }
 
