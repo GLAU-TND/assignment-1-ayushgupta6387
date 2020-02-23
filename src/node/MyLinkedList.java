@@ -21,4 +21,9 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
     public void traverse() {
 
     }
+
+    @Override
+    public void swap(Node<E> first, Node<E> second, int previous) {
+
+    }
 }
