@@ -23,6 +23,11 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
         return response;
     }
 
+    public void addFirst(E data) {
+        head = new Node(head, data);
+        size++;
+    }
+
 
     @Override
     public void insert(E data) {
