@@ -18,6 +18,13 @@ public class Selector {
         String lastName = scanner.nextLine();
         MyLinkedList<Long> contactList = new MyLinkedList<>();
         char choice = 'y';
+        long contactNumber;
+        while (choice == 'y') {
+            System.out.print("Contact Number: ");
+            contactNumber = Long.parseLong(scanner.nextLine());
+
+        }
         return person;
     }
+
 }
