@@ -108,6 +108,13 @@ public class Selector {
         System.out.println(person2.getFirstName() + "'s contact deleted from list!");
         person.delete(number - 1);
     }
+
+    public MyLinkedList<Person> sort(MyLinkedList<Person> person) {
+
+
+        return person;
+    }
 }
+
 
 
