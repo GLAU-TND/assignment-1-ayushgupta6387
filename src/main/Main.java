@@ -23,6 +23,10 @@ public class Main {
             switch (choice) {
                 case 1:
                     linkedList.insert(object.addDetails());
+                    if (linkedList.getSize() > 1) {
+                        linkedList = object.sort(linkedList);
+                    }
+                    break;
             }
         }
     }
