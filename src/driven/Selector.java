@@ -9,7 +9,10 @@ public class Selector {
     Person person = null;
 
     public Person addDetails() {
-
+        System.out.print("You have chosen to add a new contact: \n" +
+                "Please enter the name of the Person\n" +
+                "First Name: ");
+        String firstName = scanner.nextLine();
         return person;
     }
 }
