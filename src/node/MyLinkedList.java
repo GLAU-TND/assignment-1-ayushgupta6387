@@ -95,6 +95,5 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
             first.setNext(temp);
         }
 
-
     }
 }
