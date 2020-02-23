@@ -8,12 +8,21 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
         return head;
     }
 
+    private Node<E> head = null;
+    private int size = 0;
+
     public int getSize() {
         return size;
     }
 
-    private Node<E> head = null;
-    private int size = 0;
+    public Node getNode(int index) {
+        Node response = head;
+        for (int i = 0; i < index; i++) {
+            response = response.getNext();
+        }
+        return response;
+    }
+
 
     @Override
     public void insert(E data) {
