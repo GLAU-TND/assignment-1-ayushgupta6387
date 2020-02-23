@@ -40,6 +40,10 @@ public class Selector {
             if (check.isEmailCorrect(emailId)) {
                 person = new Person(firstName, lastName, emailId, contactList);
                 break;
+            } else {
+                System.out.println("Invalid Email Address Entered");
+                System.out.print("Email Address: ");
+                emailId = scanner.nextLine();
             }
         }
         return person;
