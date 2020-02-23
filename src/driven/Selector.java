@@ -2,7 +2,6 @@ package driven;
 
 import fields.Person;
 import node.MyLinkedList;
-import node.Node;
 import regex.RegexCheck;
 
 import java.util.Scanner;
@@ -108,21 +107,6 @@ public class Selector {
         Person person2 = (Person) person.getNode(number - 1).getData();
         System.out.println(person2.getFirstName() + "'s contact deleted from list!");
         person.delete(number - 1);
-    }
-
-    public MyLinkedList<Person> sort(MyLinkedList<Person> person) {
-        for (int i = 0; i < person.getSize(); i++) {
-            for (int j = 1; j < person.getSize(); j++) {
-                Node person1 = person.getNode(j - 1);
-                Node person2 = person.getNode(j);
-                Person first = (Person) person1.getData();
-                Person second = (Person) person2.getData();
-                if (first.getFirstName().compareTo(second.getFirstName()) >= 1) {
-                    person.swap(person1, person2, j - 2);
-                }
-            }
-        }
-        return person;
     }
 }
 

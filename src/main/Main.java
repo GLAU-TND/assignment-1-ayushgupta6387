@@ -24,7 +24,7 @@ public class Main {
                 case 1:
                     linkedList.insert(object.addDetails());
                     if (linkedList.getSize() > 1) {
-                        linkedList = object.sort(linkedList);
+                        linkedList = linkedList.sort(linkedList);
                     }
                     break;
                 case 2:

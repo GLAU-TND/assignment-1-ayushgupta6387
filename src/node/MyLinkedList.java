@@ -1,12 +1,9 @@
 package node;
 
 import adt.LinkedListADT;
+import fields.Person;
 
 public class MyLinkedList<E> implements LinkedListADT<E> {
-
-    public Node<E> getHead() {
-        return head;
-    }
 
     private Node<E> head = null;
     private int size = 0;
@@ -81,7 +78,22 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
     }
 
     @Override
-    public void swap(Node<E> first, Node<E> second, int previous) {
+    public MyLinkedList<E> sort(MyLinkedList<E> person) {
+        for (int i = 0; i < person.getSize(); i++) {
+            for (int j = 1; j < person.getSize(); j++) {
+                Node person1 = person.getNode(j - 1);
+                Node person2 = person.getNode(j);
+                Person first = (Person) person1.getData();
+                Person second = (Person) person2.getData();
+                if (first.getFirstName().compareTo(second.getFirstName()) >= 1) {
+                    person.swap(person1, person2, j - 2);
+                }
+            }
+        }
+        return person;
+    }
+
+    private void swap(Node<E> first, Node<E> second, int previous) {
         if (first == head) {
             Node temp = second.getNext();
             head = second;
