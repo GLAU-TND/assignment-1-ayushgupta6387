@@ -30,6 +30,8 @@ public class Selector {
                 System.out.println("Invalid Contact Number Entered");
                 continue;
             }
+            System.out.print("Would you like to add another contact number? (y/n): ");
+            choice = (scanner.nextLine()).charAt(0);
 
         }
         return person;
