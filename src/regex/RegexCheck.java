@@ -11,5 +11,12 @@ public class RegexCheck {
         Matcher matcherEmail = patternEmail.matcher(emailAddress);
         return matcherEmail.matches();
     }
+
+    public boolean isContactNumberCorrect(Long contactNumber) {
+        String correctPhoneNumber = "^(0|91)?[1-9][0-9]{9}$";
+        Pattern patternContact = Pattern.compile(correctPhoneNumber);
+        Matcher matcherContact = patternContact.matcher(String.valueOf(contactNumber));
+        return matcherContact.matches();
+    }
 }
 
