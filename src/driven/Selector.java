@@ -50,6 +50,11 @@ public class Selector {
     }
 
     public void print(MyLinkedList<Person> searchedContact, int match) {
-
+        for (int i = 0; i < match; i++) {
+            Person person1 = (Person) searchedContact.getNode(i).getData();
+            System.out.print("-------- * -------- * -------- * --------\n" +
+                    "First Name: " + person1.getFirstName() + "\n" +
+                    "Last Name: " + person1.getLastName() + "\n");
+        }
     }
 }
