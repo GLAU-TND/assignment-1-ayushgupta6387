@@ -64,9 +64,10 @@ public class MyLinkedList<E> implements LinkedListADT<E> {
         size--;
     }
 
+
     @Override
     public void delete() {
-
+        delete(size - 1);
     }
 
     @Override
