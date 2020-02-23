@@ -74,5 +74,10 @@ public class Selector {
         int size = person.getSize();
         print(person, size);
     }
+
+    public void searchContact(MyLinkedList person) {
+
+    }
 }
+
 
