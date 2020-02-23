@@ -68,4 +68,9 @@ public class Selector {
                     "-------- * -------- * -------- * --------");
         }
     }
+
+    public void viewContact(MyLinkedList person) {
+
+    }
 }
+
