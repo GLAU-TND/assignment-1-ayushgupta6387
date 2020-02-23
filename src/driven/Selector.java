@@ -13,6 +13,8 @@ public class Selector {
                 "Please enter the name of the Person\n" +
                 "First Name: ");
         String firstName = scanner.nextLine();
+        System.out.print("Last Name : ");
+        String lastName = scanner.nextLine();
         return person;
     }
 }
