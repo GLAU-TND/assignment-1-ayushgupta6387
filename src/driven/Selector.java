@@ -77,6 +77,8 @@ public class Selector {
 
     public void searchContact(MyLinkedList person) {
         MyLinkedList<Person> searchedContact = new MyLinkedList<>();
+        System.out.println("You could search for a contact from their first names: ");
+        String elementFor = scanner.nextLine();
     }
 }
 
