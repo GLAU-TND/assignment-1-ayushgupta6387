@@ -2,12 +2,14 @@ package driven;
 
 import fields.Person;
 import node.MyLinkedList;
+import regex.RegexCheck;
 
 import java.util.Scanner;
 
 public class Selector {
     Scanner scanner = new Scanner(System.in);
     Person person = null;
+    RegexCheck check = new RegexCheck();
 
     public Person addDetails() {
         System.out.print("You have chosen to add a new contact: \n" +
@@ -22,6 +24,8 @@ public class Selector {
         while (choice == 'y') {
             System.out.print("Contact Number: ");
             contactNumber = Long.parseLong(scanner.nextLine());
+            if (check.isContactNumberCorrect(contactNumber)) {
+            }
 
         }
         return person;
