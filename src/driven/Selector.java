@@ -87,6 +87,12 @@ public class Selector {
                 searchedContact.insert(person1);
             }
         }
+        if (match > 0) {
+            System.out.println(match + " match found!");
+        } else {
+            System.out.println("NO RESULTS FOUND!");
+        }
+        print(searchedContact, match);
     }
 }
 
