@@ -118,7 +118,7 @@ public class Selector {
                 Person first = (Person) person1.getData();
                 Person second = (Person) person2.getData();
                 if (first.getFirstName().compareTo(second.getFirstName()) >= 1) {
-
+                    person.swap(person1, person2, j - 2);
                 }
 
                 return person;
