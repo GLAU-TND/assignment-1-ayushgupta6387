@@ -19,7 +19,11 @@ public class Main {
                     "Press 4 to delete a contact\n" +
                     "Press 5 to exit program ");
             int choice = scanner.nextInt();
-            Selector obj = new Selector();
+            Selector object = new Selector();
+            switch (choice) {
+                case 1:
+                    linkedList.insert(object.addDetails());
+            }
         }
     }
 }
