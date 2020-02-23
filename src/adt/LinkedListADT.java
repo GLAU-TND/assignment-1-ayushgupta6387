@@ -7,4 +7,5 @@ public interface LinkedListADT<E> {
 
     void traverse();
 
+
 }
