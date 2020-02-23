@@ -8,6 +8,14 @@ public class Person {
     private String emailId;
     private MyLinkedList<Long> contactNumber;
 
+
+    public Person(String firstName, String lastName, String emailId, MyLinkedList<Long> contactNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailId = emailId;
+        this.contactNumber = contactNumber;
+    }
+
     public String getFirstName() {
         return firstName;
     }
