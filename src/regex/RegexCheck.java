@@ -17,6 +17,7 @@ public class RegexCheck {
         Pattern patternContact = Pattern.compile(correctPhoneNumber);
         Matcher matcherContact = patternContact.matcher(String.valueOf(contactNumber));
         return matcherContact.matches();
+
     }
 }
 
