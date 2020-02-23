@@ -34,6 +34,8 @@ public class Selector {
             choice = (scanner.nextLine()).charAt(0);
 
         }
+        System.out.print("Email Address: ");
+        String emailId = scanner.nextLine();
         return person;
     }
 
