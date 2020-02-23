@@ -64,6 +64,8 @@ public class Selector {
             } else {
                 System.out.print("Contact Number: " + person1.getContactNumber().getNode(0).getData());
             }
+            System.out.println("\nEmail Address: " + person1.getEmailId() + "\n" +
+                    "-------- * -------- * -------- * --------");
         }
     }
 }
