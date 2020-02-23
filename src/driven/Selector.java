@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Selector {
     Scanner scanner = new Scanner(System.in);
-    Person person = null;
+    Person personLinked = null;
     RegexCheck check = new RegexCheck();
 
     public Person addDetails() {
@@ -36,10 +36,14 @@ public class Selector {
         }
         System.out.print("Would you like to add email address? (y/n): ");
         char ch = scanner.nextLine().charAt(0);
+        String emailId = "";
+        if (ch == 'y') {
+            System.out.print("Email Address: ");
+            emailId = scanner.nextLine();
+        }
         while (ch == 'y') {
-            String emailId = scanner.nextLine();
             if (check.isEmailCorrect(emailId)) {
-                person = new Person(firstName, lastName, emailId, contactList);
+                personLinked = new Person(firstName, lastName, emailId, contactList);
                 break;
             } else {
                 System.out.println("Invalid Email Address Entered");
@@ -47,42 +51,38 @@ public class Selector {
                 emailId = scanner.nextLine();
             }
         }
-        return person;
-    }
-
-    public void print(MyLinkedList<Person> searchedContact, int match) {
-        for (int i = 0; i < match; i++) {
-            Person person1 = (Person) searchedContact.getNode(i).getData();
-            System.out.print("-------- * -------- * -------- * --------\n" +
-                    "First Name: " + person1.getFirstName() + "\n" +
-                    "Last Name: " + person1.getLastName() + "\n");
-            if (person1.getContactNumber().getSize() > 1) {
-                System.out.print("Contact Number(s): ");
-                for (int j = 0; j < person1.getContactNumber().getSize(); j++) {
-
-                    System.out.print(person1.getContactNumber().getNode(j).getData() + (j < person1.getContactNumber().getSize() - 1 ? ", " : ""));
-                }
-            } else {
-                System.out.print("Contact Number: " + person1.getContactNumber().getNode(0).getData());
-            }
-            System.out.println("\nEmail Address: " + person1.getEmailId() + "\n" +
-                    "-------- * -------- * -------- * --------");
+        if (ch == 'n') {
+            personLinked = new Person(firstName, lastName, "", contactList);
         }
+        return personLinked;
     }
 
-    public void viewContact(MyLinkedList person) {
-        System.out.println("---Here are all your contacts---");
-        int size = person.getSize();
-        print(person, size);
+    public void print(Person person) {
+        System.out.print("-------- * -------- * -------- * --------\n" +
+                "First Name: " + person.getFirstName() + "\n" +
+                "Last Name: " + person.getLastName() + "\n");
+        if (person.getContactNumber().getSize() > 1) {
+            System.out.print("Contact Number(s): ");
+            for (int j = 0; j < person.getContactNumber().getSize(); j++) {
+                System.out.print(person.getContactNumber().getNode(j).getData() + (j < person.getContactNumber().getSize() - 1 ? ", " : ""));
+            }
+        } else {
+            System.out.print("Contact Number: " + person.getContactNumber().getNode(0).getData());
+        }
+        if (person.getEmailId().compareTo("") != 0) {
+            System.out.print("\nEmail Address: " + person.getEmailId());
+        }
+        System.out.println("\n-------- * -------- * -------- * --------");
+
     }
 
-    public void searchContact(MyLinkedList person) {
+    public void searchContact(MyLinkedList personLinked) {
         MyLinkedList<Person> searchedContact = new MyLinkedList<>();
         System.out.println("You could search for a contact from their first names: ");
         String elementFor = scanner.nextLine();
         int match = 0;
-        for (int i = 0; i < person.getSize(); i++) {
-            Person person1 = (Person) person.getNode(i).getData();
+        for (int i = 0; i < personLinked.getSize(); i++) {
+            Person person1 = (Person) personLinked.getNode(i).getData();
             if (elementFor.equals(person1.getFirstName())) {
                 match++;
                 searchedContact.insert(person1);
@@ -90,26 +90,37 @@ public class Selector {
         }
         if (match > 0) {
             System.out.println(match + " match found!");
+            for (int i = 0; i < searchedContact.getSize(); i++) {
+                Person name = (Person) searchedContact.getNode(i).getData();
+                print(name);
+            }
         } else {
             System.out.println("NO RESULTS FOUND!");
         }
-        print(searchedContact, match);
     }
 
-    public void deleteContact(MyLinkedList<Person> person) {
-        int i = 1;
+    public void viewContact(MyLinkedList person1) {
+        System.out.println("---Here are all your contacts---");
+        int size = person1.getSize();
+        for (int i = 0; i < size; i++) {
+            Person person = (Person) person1.getNode(i).getData();
+            print(person);
+        }
+    }
+
+    public void deleteContact(MyLinkedList personLinked) {
+        System.out.println("Here are all your contacts");
+        int i = 0;
         System.out.println("Here are all your contacts: ");
-        for (int j = 0; j < person.getSize(); j++) {
-            Person person1 = (Person) person.getNode(j).getData();
-            System.out.println(i++ + ". " + person1.getFirstName() + " " + person1.getLastName());
+        for (int j = 0; j < personLinked.getSize(); j++) {
+            Person person1 = (Person) personLinked.getNode(j).getData();
+            System.out.println(++i + ". " + person1.getFirstName() + " " + person1.getLastName());
         }
         System.out.println("Press the number against the contact to delete it: ");
         int number = scanner.nextInt();
-        Person person2 = (Person) person.getNode(number - 1).getData();
+        Person person2 = (Person) personLinked.getNode(number - 1).getData();
         System.out.println(person2.getFirstName() + "'s contact deleted from list!");
-        person.delete(number - 1);
+        personLinked.delete(number - 1);
     }
 }
-
-
 
