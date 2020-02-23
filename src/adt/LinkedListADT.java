@@ -1,6 +1,6 @@
 package adt;
 
-import node.Node;
+import node.MyLinkedList;
 
 public interface LinkedListADT<E> {
     void insert(E data);
@@ -9,5 +9,5 @@ public interface LinkedListADT<E> {
 
     void traverse();
 
-    void swap(Node<E> first, Node<E> second, int previous);
+    MyLinkedList<E> sort(MyLinkedList<E> person);
 }
