@@ -55,6 +55,15 @@ public class Selector {
             System.out.print("-------- * -------- * -------- * --------\n" +
                     "First Name: " + person1.getFirstName() + "\n" +
                     "Last Name: " + person1.getLastName() + "\n");
+            if (person1.getContactNumber().getSize() > 1) {
+                System.out.print("Contact Number(s): ");
+                for (int j = 0; j < person1.getContactNumber().getSize(); j++) {
+
+                    System.out.print(person1.getContactNumber().getNode(j).getData() + (j < person1.getContactNumber().getSize() - 1 ? ", " : ""));
+                }
+            } else {
+                System.out.print("Contact Number: " + person1.getContactNumber().getNode(0).getData());
+            }
         }
     }
 }
