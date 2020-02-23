@@ -102,6 +102,11 @@ public class Selector {
             Person person1 = (Person) person.getNode(j).getData();
             System.out.println(i++ + ". " + person1.getFirstName() + " " + person1.getLastName());
         }
+        System.out.println("Press the number against the contact to delete it: ");
+        int number = scanner.nextInt();
+        Person person2 = (Person) person.getNode(number - 1).getData();
+        System.out.println(person2.getFirstName() + "'s contact deleted from list!");
+        person.delete(number - 1);
     }
 }
 
