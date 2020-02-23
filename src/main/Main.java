@@ -33,6 +33,10 @@ public class Main {
                 case 3:
                     object.searchContact(linkedList);
                     break;
+                case 4:
+                    object.deleteContact(linkedList);
+                    break;
+
             }
         }
     }
