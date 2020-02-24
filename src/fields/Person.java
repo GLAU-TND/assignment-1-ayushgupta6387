@@ -46,5 +46,6 @@ public class Person {
 
     public void setContactNumber(MyLinkedList<Long> contactNumber) {
         this.contactNumber = contactNumber;
+
     }
 }
